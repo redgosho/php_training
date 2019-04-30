@@ -3,7 +3,7 @@
     function main () {
         $kenmei = "北海道";
         $kenDataAll = array();
-        $kenData = file_get_contents("./jinkou.csv");
+        $kenData = file_get_contents("/mnt/fuelphp/jinkou.csv");
         $kenDataExplode = explode("\n", $kenData);
         for ($i=0; $i<=46; $i++){
             $ken_explode = explode(",",$kenDataExplode[$i]);
