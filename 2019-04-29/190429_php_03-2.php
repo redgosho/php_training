@@ -3,7 +3,7 @@
     function main () {
         $kenCode = "221111";
         $kenDataAll = array();
-        $kenData = file_get_contents("/mnt/fuelphp/jinkou.csv");
+        $kenData = file_get_contents("./jinkou.csv");
         $kenDataExplode = explode("\n", $kenData);
         for ($i=0; $i<=46; $i++){
             $ken_explode = explode(",",$kenDataExplode[$i]);
