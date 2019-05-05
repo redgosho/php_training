@@ -16,6 +16,7 @@
 
 <?php
 function main () {
+    $text = "";
     $jisa = array(
         "東京" => 9,
         "ドバイ" => 4,
@@ -33,12 +34,24 @@ function main () {
         return "選択してください。";
     }else{
         $place = $_POST['place'];
-        $time = date("G時d分");
+        $hour = gmdate("G");
+        $minits = gmdate("d");
         foreach ($place as $value) {
-            $text = "{$place}はUTC{$jisa[$place]}で、現在{$time}です。";
+            $hour_p = $hour + $jisa[$value];//現在時刻＋UTC時差
+            $hour_dif = $hour_p - $hour;//時刻差検出
+            if($hour_p<0){//前日のときの処理
+                $hour_p = 24 + $hour_p;
+                $minits = $minits."分(前日)";
+            }
+            $hour_p = $hour_p."時";
+            if ($jisa[$value]>=0) {//時差＋のときに記号つける処理}
+                $jisa_num = "+{$jisa[$value]}";
+            }else{
+                $jisa_num = $jisa[$value];
+            }
+            $time = $hour_p.$minits;
+            echo "{$value}はUTC{$jisa_num}で、現在{$time}です。<br>";//DOM出力
         }
-        $text = "{$place}はUTC{$jisa[$place]}で、現在{$time}です。";
-        return $text;
     }
 }
 ?>
