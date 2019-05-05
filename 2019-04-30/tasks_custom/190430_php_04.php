@@ -1,5 +1,5 @@
-<h1>人口データ検索システム</h1>
 <div>
+    <h1>人口データ検索システム</h1>
     <form method="post" action="./tasks_custom/190430_php_04_result.php">
         <?php
             $input = <<<EOM

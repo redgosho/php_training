@@ -1,5 +1,6 @@
-<h1>世界時計</h1>
+
 <div>
+    <h1>世界時計</h1>
     <form method="post" action="./tasks_custom/190430_php_02_result.php">
         <p>時刻を表示させたい都市名を詮索してください。</p>
         <p>

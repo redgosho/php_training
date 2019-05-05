@@ -34,20 +34,20 @@
 		if(!_ua.ltIE8) {
 
 		var jarallax = new Jarallax();
-		var animation = jarallax.addAnimation('#slide2',[{progress:'0', display:'block', opacity:'1', top:'120%'},
+		var animation = jarallax.addAnimation('#slide2',[
+			{progress:'0', display:'block', opacity:'1', top:'120%'},
 			{progress:'10', top:'0%', opacity:'1'},
 			{progress:'20', top:'-50%', opacity:'0'}
-			]);
+		]);
 
 		jarallax.addAnimation('#slide1',[
-		{progress:'0', display:'block', opacity:'1', top:'0%'},
-		{progress:'20', top:'-50%', opacity:'0'}]);
+			{progress:'0', display:'block', opacity:'1', top:'0%'},
+			{progress:'20', top:'-50%', opacity:'0'}
+		]);
 
 		jarallax.cloneAnimation('#slide3',{progress:'+10'}, animation);
-            jarallax.cloneAnimation('#slide4',{progress:'+20'}, animation);
+    jarallax.cloneAnimation('#slide4',{progress:'+20'}, animation);
 		jarallax.cloneAnimation('#slide5',{progress:'+30'}, animation);
-		jarallax.cloneAnimation('#slide6',{progress:'+40'}, animation);
-		jarallax.cloneAnimation('#slide7',{progress:'+50'}, animation);
 
 		$('html').on('mousewheel',function( e, del, delX, delY) {
 			e.preventDefault();
