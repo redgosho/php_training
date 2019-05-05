@@ -1,6 +1,6 @@
 <h1>人口データ検索システム</h1>
 <div>
-    <form method="post" action="./190430_php_04_result.php">
+    <form method="post" action="./tasks_custom/190430_php_04_result.php">
         <?php
             $input = <<<EOM
             <p>県コード

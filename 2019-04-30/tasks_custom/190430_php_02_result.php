@@ -9,7 +9,7 @@
 <body>
     <div>
         <p><?=main(); ?></p>
-        <p><a href="./190430_php_02.php">地域選択に戻る</a></p>
+        <p><a href="../index.php#slide3">地域選択に戻る</a></p>
     </div>
 </body>
 </html>

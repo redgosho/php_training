@@ -9,7 +9,7 @@
 <body>
     <div>
         <p><?=main(); ?></p>
-        <p><a href="./190430_php_04.php">検索ページに戻る</a></p>
+        <p><a href="../index.php#slide5">検索ページに戻る</a></p>
     </div>
 </body>
 </html>
