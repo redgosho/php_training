@@ -18,7 +18,7 @@
     function main () {
         $kenCode = $_POST['kenCode'];
         $kenDataAll = array();
-        $kenData = file_get_contents("./jinkou.csv");
+        $kenData = file_get_contents("../src/jinkou.csv");
         $kenDataExplode = explode("\n", $kenData);
         for ($i=0; $i<=46; $i++){
             $ken_explode = explode(",",$kenDataExplode[$i]);
