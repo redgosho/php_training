@@ -16,11 +16,11 @@ function main () {
     }
 }
 function countCopys ($start,$end,$sheetNum_m) {//時間の差異を出して一分の生産数をかけて、プリント枚数を数える。なおGMT
-    $startSec = strtotime($start);
+    $startSec = strtotime($start);//数値データに変換
     $endSec   = strtotime($end);
     $diff = $endSec - $startSec;
     if ($diff>0) {
-        $minites = gmdate("H",$diff) * 60 + gmdate("i",$diff);
+        $minites = gmdate("H",$diff) * 60 + gmdate("i",$diff);//某年からの数値じゃわかりにくいから現在時分になおして計算。文字列なんだけど計算できるからいいですね。
         $sheetNum = $minites * $sheetNum_m;
         return $sheetNum;
     }
