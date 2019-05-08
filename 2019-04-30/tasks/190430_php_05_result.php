@@ -33,6 +33,8 @@
             $value = mozi_del($value);
             if (array_key_exists($value, $kenDataAll)) {
                 echo "「{$value}」（都道府県コード{$kenDataAll[$value]["県コード"]}）の人口は{$kenDataAll[$value]["人口"]}人です。<br>";
+            }elseif($value==""){
+                echo "未入力欄です。<br>";
             }else{
                 echo "その県名「{$value}」は登録されてないよ。<br>";
             }

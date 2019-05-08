@@ -17,6 +17,9 @@
 <?php
     function main () {
         $kenCode = $_POST['kenCode'];
+        if(preg_match('/^([0-9]{1})$/', $kenCode)){//修正箇所：一桁の数字でないときは先頭に０を着けました。
+            $kenCode = "0".$kenCode;
+        }
         $kenDataAll = array();
         $kenData = file_get_contents("../src/jinkou.csv");
         $kenDataExplode = explode("\n", $kenData);

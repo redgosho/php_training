@@ -23,18 +23,15 @@ function main () {
         "ニューヨーク(夏時間)" => -4,
         "ホノルル" => -10
     );
-    //数値がプラスだったとき、文字列として+を追加する。
-    foreach ($jisa as $key => $value) {
-        if ($value >= 0) {
-            $value = "+{$value}";
-        }
-    }
     if(empty($_POST['place'])){
         return "選択してください。";
     }else{
         $place = $_POST['place'];
         $time = date("G時d分");
-        $text = "{$place}はUTC{$jisa[$place]}で、現在{$time}です。";
+        if ($jisa[$place] >= 0) {
+            $value = "+{$jisa[$place]}";
+        }
+        $text = "{$place}はUTC{$value}で、現在{$time}です。";
         return $text;
     }
 }

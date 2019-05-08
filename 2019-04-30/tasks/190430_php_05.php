@@ -13,7 +13,7 @@
             <?php
                 $input = <<<EOM
                 <p>都道府県名
-                    <input type="text" id="kenCode" name="kenmei[]" requiredminlength="4" maxlength="8" size="10" placeholder="県名を入力">
+                    <input type="text" class="kenCode" name="kenmei[]" requiredminlength="4" maxlength="8" size="10" placeholder="県名を入力">
                 </p>
 EOM;
                 for ($i=0; $i < 5; $i++) { 

@@ -30,6 +30,9 @@
         //検索処理
         $kenCode = $_POST['kenCode'];
         foreach ($kenCode as $value) {
+            if(preg_match('/^([0-9]{1})$/', $value)){//修正箇所：一桁の数字でないときは先頭に０を着けました。
+                $value = "0".$value;
+            }
             if (array_key_exists($value, $kenDataAll)) {
                 echo "県コード{$value}は「{$kenDataAll[$value]['県名']}」です。人口は{$kenDataAll[$value]['人口']}人です。<br>";
             }else{
