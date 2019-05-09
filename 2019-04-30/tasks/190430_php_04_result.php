@@ -35,8 +35,10 @@
             }
             if (array_key_exists($value, $kenDataAll)) {
                 echo "県コード{$value}は「{$kenDataAll[$value]['県名']}」です。人口は{$kenDataAll[$value]['人口']}人です。<br>";
+            }elseif($value==""){
+                echo "未入力欄です。<br>";
             }else{
-                echo "その県コード{$value}は登録されてないよ。<br>";
+                echo "その県コード「{$value}」は登録されてないよ。<br>";
             }
         }
     }
