@@ -35,7 +35,7 @@ function main () {
     }else{
         $place = $_POST['place'];
         $hour = gmdate("G");
-        $minits = gmdate("d");
+        $minits = gmdate("i");
         foreach ($place as $value) {
             $hour_p = $hour + $jisa[$value];//現在時刻＋UTC時差
             $hour_dif = $hour_p - $hour;//時刻差検出

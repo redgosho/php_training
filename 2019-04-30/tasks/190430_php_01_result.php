@@ -16,6 +16,7 @@
 
 <?php
 function main () {
+    date_default_timezone_set('UTC');
     $jisa = array(
         "東京" => 9,
         "ドバイ" => 4,
@@ -27,9 +28,20 @@ function main () {
         return "選択してください。";
     }else{
         $place = $_POST['place'];
-        $time = date("G時d分");
-        if ($jisa[$place] >= 0) {
+        $nowTimeH =date("G");
+        if($nowTimeH+$jisa[$place]>=0 && $nowTimeH+$jisa[$place]<=24){//時間計算
+            $nowTimeH = $nowTimeH+$jisa[$place];
+        }elseif($nowTimeH+$jisa[$place]>=24){
+            $nowTimeH = $nowTimeH+$jisa[$place]-24;
+        }else{
+            $nowTimeH = $nowTimeH+$jisa[$place]+24;
+        }
+        $nowTimeM = date("i");
+        $time = $nowTimeH."時".$nowTimeM."分";
+        if ($jisa[$place] >= 0) {//+ー処理
             $value = "+{$jisa[$place]}";
+        }else{
+            $value = "{$jisa[$place]}";
         }
         $text = "{$place}はUTC{$value}で、現在{$time}です。";
         return $text;
