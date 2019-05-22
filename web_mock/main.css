@@ -81,6 +81,7 @@ main {
     font-size: 40px;
     color: #ffffff;
     z-index: 1;
+    opacity: 0;
 }
 .title::before, .title::after {
     content: "";
@@ -153,11 +154,36 @@ main {
 
 .page_modal {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 300px;
-    height: 300px;
-    display: block;
+    height: 250px;
+    width: 400px;
+    background:rgb(255, 133, 133);
+    border-radius: 30px;
+    top:calc(50% - 250px/2);
+    left:calc(50% - 400px/2);
+}
+.page_modal .border {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    border: dashed 2px #283c5f;
+    border-radius: 30px;
+    box-sizing: border-box;
+}
+
+.page_modal form {
+    position: absolute;
+    text-align: center;
+}
+.page_modal form .input_text {
+
+}
+.page_modal form .input_article {
+    
+}
+.page_modal form .submit {
+    bottom:0;
 }
 
 /* animation */
@@ -169,6 +195,9 @@ main {
 }
 .articleCard {
     animation: slide-left 1s ease .5s forwards;
+}
+.title h2 {
+    animation: opacity_in 1s ease .8s forwards;
 }
 .title::before {
     animation: slide-left-2 1s ease .8s forwards;
@@ -205,5 +234,10 @@ main {
 @keyframes bigban {
     from { transform: scale(1.1); opacity: 0;}
     to   { transform: scale(1); opacity: 1;}
+}
+
+@keyframes opacity_in {
+    from { opacity: 0;}
+    to   { opacity: 1;}
 }
 

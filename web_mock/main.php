@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="./main.css">
     <title>main</title>
 </head>
 <body>
@@ -17,7 +17,7 @@
             </div>
             <?php
                 $pdo = new PDO ( 'mysql:host=localhost;dbname=mock;charset=utf8', 'root', '' );
-                foreach ( $pdo->query ( 'select * from toppage' ) as $article ) {
+                foreach ( $pdo->query ( 'select * from toppage ORDER BY id DESC' ) as $article ) {
                     $texttext= <<< ARTICLE
                     <div class="articleCard">
                         <div class="card_title">
@@ -37,11 +37,13 @@ ARTICLE;
             </div>
         </div>
         <div class="page_modal">
-            <form action="./main.php" method="post">
-                <input type="text">
-                <textarea name="article" cols="30" rows="8"></textarea>
-                <input type = "submit" value ="送信">
+            <div class="border">
+            <form action="./registar.php" method="post">
+                <input class="input_text" name="data[]" type="text">
+                <textarea class="input_article" name="data[]" cols="30" rows="8"></textarea>
+                <input class="submit" type = "submit" value ="送信">
             </form>
+            </div>
         </div>
     </main>
 </body>
