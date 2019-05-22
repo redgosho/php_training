@@ -151,6 +151,15 @@ main {
     text-decoration: none;
 }
 
+.page_modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    display: block;
+}
+
 /* animation */
 .page_bg::before {
     animation: slide-top .6s cubic-bezier(0.99,0.04,0.01,0.99) 0s forwards;
@@ -197,3 +206,4 @@ main {
     from { transform: scale(1.1); opacity: 0;}
     to   { transform: scale(1); opacity: 1;}
 }
+
