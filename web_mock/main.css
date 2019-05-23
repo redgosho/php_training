@@ -158,7 +158,8 @@ main {
     width: 400px;
     background:rgb(255, 133, 133);
     border-radius: 30px;
-    top:calc(50% - 250px/2);
+    /* top:calc(50% - 250px/2); */
+    bottom:0;
     left:calc(50% - 400px/2);
 }
 .page_modal .border {
