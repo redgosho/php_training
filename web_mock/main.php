@@ -17,7 +17,8 @@
             </div>
             <?php
                 $pdo = new PDO ( 'mysql:host=localhost;dbname=mock;charset=utf8', 'root', '' );
-                foreach ( $pdo->query ( 'select * from toppage ORDER BY id DESC' ) as $article ) {
+                $sql = 'select * from toppage ORDER BY id DESC';
+                foreach ( $pdo->query ($sql) as $article ) {
                     $texttext= <<< ARTICLE
                     <div class="articleCard">
                         <div class="card_title">
