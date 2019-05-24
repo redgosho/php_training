@@ -7,10 +7,10 @@
     $city = '';
     $timeCodeLong = $time['tzname'];
     $UTCDiff = $time['utcdiff'];
+    $nowTime = nowTime($UTCDiff);
     if($UTCDiff>0){
         $UTCDiff = "+".$UTCDiff;
     }
-    $nowTime = date("h時m分");
     foreach ( $pdo->query ($sql2) as $time2 ) {
         $city .= $time2['city']."/"; 
     }
@@ -25,4 +25,19 @@
 ARTICLE;
     echo $texttext;
     }
+    
+    function nowTime ($UTCDiff){
+        $hour = gmdate("G");
+        $minits = gmdate("i");
+        $hour_p = $hour + $UTCDiff;//現在時刻＋UTC時差
+        $hour_dif = $hour_p - $hour;//時刻差検出
+        if($hour_p<0){//前日のときの処理
+            $hour_p = 24 + $hour_p;
+        }
+        $hour_p .= "時";
+        $minits .= "分";
+        $time = $hour_p.$minits;
+        return $time;
+    }
+
 ?>
