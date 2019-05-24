@@ -1,5 +1,4 @@
 <?php
-global $jisa;//jisaはグローバル変数にしました。disptz（）の引数に入れないで作る方法が思いつきませんでした。
 $jisa = array(
     "JST"=>array( "日本時間", 9),
     "GST"=>array( "ドバイ時間", 4),
@@ -7,7 +6,7 @@ $jisa = array(
     "EDT"=>array( "ニューヨーク夏時間", -4)
 );
 
-disptz("JS");
+disptz("JST");
 disptz("GST");
 disptz("EDT");
 addtz("HST", "ホノルル時間", -10);
