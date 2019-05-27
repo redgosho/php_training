@@ -40,8 +40,8 @@ ARTICLE;
         <div class="page_modal">
             <div class="border">
             <form action="./registar.php" method="post">
-                <input class="input_text" name="data[]" type="text">
-                <textarea class="input_article" name="data[]" cols="30" rows="8"></textarea>
+                <input class="input_text" name="data[]" type="text" placeholder="タイトルはここ">
+                <textarea class="input_article" name="data[]" cols="30" rows="8" placeholder="ここになにをかけばいいかわからないって？そんなことないはずだ。キミならかけるよ！がんばって！"></textarea>
                 <input class="submit" type = "submit" value ="送信">
             </form>
             </div>
